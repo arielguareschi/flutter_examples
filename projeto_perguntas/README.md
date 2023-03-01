@@ -1,6 +1,6 @@
 # projeto_perguntas
 
-Exemplo Perguntas
+Perguntas
 
 ## Getting Started
 
