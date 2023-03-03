@@ -10,7 +10,7 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300,
+      height: double.maxFinite,
       child: transactions.isEmpty
           ? Column(
               children: [
@@ -34,6 +34,30 @@ class TransactionList extends StatelessWidget {
               itemBuilder: (ctx, index) {
                 final tr = transactions[index];
                 return Card(
+                  elevation: 5,
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 8,
+                    horizontal: 5,
+                  ),
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      radius: 30,
+                      child: Padding(
+                        padding: const EdgeInsets.all(6.0),
+                        child: FittedBox(
+                          child: Text('R\$${tr.value.toStringAsFixed(2)}'),
+                        ),
+                      ),
+                    ),
+                    title: Text(
+                      tr.title,
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                    subtitle: Text(DateFormat('d MMM y').format(tr.date)),
+                  ),
+                );
+
+                /*return Card(
                   child: Row(
                     children: [
                       Container(
@@ -72,7 +96,7 @@ class TransactionList extends StatelessWidget {
                       ),
                     ],
                   ),
-                );
+                ); */
               },
             ),
     );
