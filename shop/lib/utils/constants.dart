@@ -5,5 +5,5 @@ class Constants {
       'https://shop-coder-ariel-default-rtdb.firebaseio.com/products';
   static const orderBaseUrl =
       'https://shop-coder-ariel-default-rtdb.firebaseio.com/orders';
-  static const webApiKey = 'AIzaSyAOB9uer_xxRprUZnoZSqeK3oenNmingOc';
+  static const webApiKey = 'AIzaSyDwmd2Ol9ZC2ZyJj_Kh9alEecoHNxV_fgE';
 }
