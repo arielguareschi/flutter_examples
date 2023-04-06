@@ -6,7 +6,6 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:greate_places/models/place.dart';
 import 'package:greate_places/utils/db_util.dart';
 import 'package:greate_places/utils/location_util.dart';
-import 'package:greate_places/widgets/location_input.dart';
 
 class GreatPlaces with ChangeNotifier {
   List<Place> _items = [];

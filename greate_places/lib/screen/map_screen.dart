@@ -7,7 +7,8 @@ class MapScreen extends StatefulWidget {
   final PlaceLocation initialLocation;
   final bool isReadonly;
 
-  MapScreen({
+  const MapScreen({
+    super.key,
     this.initialLocation = const PlaceLocation(
         latitude: 37.419857, longitude: -122.078827, address: ""),
     this.isReadonly = false,
@@ -28,9 +29,19 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Marker marker = (_pickedPosition == null && !widget.isReadonly)
+        ? Marker(
+            markerId: const MarkerId("p1"),
+            position: widget.initialLocation.toLatLng(),
+          )
+        : Marker(
+            markerId: const MarkerId("p1"),
+            position: _pickedPosition,
+          );
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Selecione...'),
+        title: const Text('Selecione...'),
         actions: <Widget>[
           if (!widget.isReadonly)
             IconButton(
@@ -52,15 +63,7 @@ class _MapScreenState extends State<MapScreen> {
           zoom: 13,
         ),
         onTap: widget.isReadonly ? null : _selectPosition,
-        markers: (_pickedPosition == null && !widget.isReadonly)
-            ? null
-            : {
-                Marker(
-                  markerId: MarkerId('p1'),
-                  position:
-                      _pickedPosition ?? widget.initialLocation.toLatLng(),
-                ),
-              },
+        markers: {marker},
       ),
     );
   }

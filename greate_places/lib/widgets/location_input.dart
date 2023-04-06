@@ -7,7 +7,7 @@ import 'package:location/location.dart';
 class LocationInput extends StatefulWidget {
   final Function onSelectPosition;
 
-  LocationInput(this.onSelectPosition, {super.key});
+  const LocationInput(this.onSelectPosition, {super.key});
 
   @override
   _LocationInputState createState() => _LocationInputState();
@@ -45,7 +45,7 @@ class _LocationInputState extends State<LocationInput> {
     final LatLng selectedPosition = await Navigator.of(context).push(
       MaterialPageRoute(
         fullscreenDialog: true,
-        builder: (ctx) => MapScreen(),
+        builder: (ctx) => const MapScreen(),
       ),
     );
 

@@ -13,7 +13,7 @@ class PlaceLocation {
   });
 
   LatLng toLatLng() {
-    return LatLng(this.latitude, this.longitude);
+    return LatLng(latitude, longitude);
   }
 }
 

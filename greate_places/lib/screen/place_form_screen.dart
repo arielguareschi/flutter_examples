@@ -8,6 +8,8 @@ import 'package:greate_places/widgets/location_input.dart';
 import 'package:provider/provider.dart';
 
 class PlaceFormScreen extends StatefulWidget {
+  const PlaceFormScreen({super.key});
+
   @override
   State<StatefulWidget> createState() => _PlaceFormScreenState();
 }

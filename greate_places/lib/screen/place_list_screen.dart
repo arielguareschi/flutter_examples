@@ -4,6 +4,8 @@ import 'package:greate_places/utils/app_routes.dart';
 import 'package:provider/provider.dart';
 
 class PlacesListScreen extends StatelessWidget {
+  const PlacesListScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,25 +30,26 @@ class PlacesListScreen extends StatelessWidget {
                   child: Text('Nenhum local cadastrado'),
                 ),
                 builder: (ctx, greatPlaces, ch) => greatPlaces.itemsCount == 0
-                    ? ch
+                    ? ch!
                     : ListView.builder(
                         itemCount: greatPlaces.itemsCount,
                         itemBuilder: (ctx, i) => ListTile(
-                              leading: CircleAvatar(
-                                backgroundImage: FileImage(
-                                  greatPlaces.itemByIndex(i).image,
-                                ),
-                              ),
-                              title: Text(greatPlaces.itemByIndex(i).title),
-                              subtitle: Text(
-                                  greatPlaces.itemByIndex(i).location.address),
-                              OnTap: () {
-                                Navigator.of(context).pushNamed(
-                                  AppRoutes.PLACE_DETAIL,
-                                  arguments: greatPlaces.itemByIndex(i),
-                                );
-                              },
-                            )),
+                          leading: CircleAvatar(
+                            backgroundImage: FileImage(
+                              greatPlaces.itemByIndex(i).image,
+                            ),
+                          ),
+                          title: Text(greatPlaces.itemByIndex(i).title),
+                          subtitle:
+                              Text(greatPlaces.itemByIndex(i).location.address),
+                          onTap: () {
+                            Navigator.of(context).pushNamed(
+                              AppRoutes.PLACE_DETAIL,
+                              arguments: greatPlaces.itemByIndex(i),
+                            );
+                          },
+                        ),
+                      ),
               ),
       ),
     );
