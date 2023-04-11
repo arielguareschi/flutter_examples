@@ -46,9 +46,9 @@ class _UserImagePickerState extends State<UserImagePicker> {
         ),
         TextButton(
           onPressed: _pickImage,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Icon(
                 Icons.image,
               ),
