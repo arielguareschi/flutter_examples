@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "903886564693",
+    "project_id": "chat-ariel-flutter",
+    "storage_bucket": "chat-ariel-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903886564693:android:e52b344034fc3c709f53dc",
+        "android_client_info": {
+          "package_name": "br.com.ariel.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903886564693-aece7rlvgsnr0maijvkfl9vpsu0afs4l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3_8iJXyb1htAk5Gs7FiH1JkLCrhCRTys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903886564693-aece7rlvgsnr0maijvkfl9vpsu0afs4l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
