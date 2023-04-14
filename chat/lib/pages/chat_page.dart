@@ -1,8 +1,5 @@
-import 'dart:math';
-
 import 'package:chat/components/messages.dart';
 import 'package:chat/components/new_message.dart';
-import 'package:chat/core/models/chat_notification.dart';
 import 'package:chat/core/services/auth/auth_service.dart';
 import 'package:chat/core/services/notification/chat_notification_service.dart';
 import 'package:chat/pages/notification_page.dart';
@@ -24,11 +21,11 @@ class ChatPage extends StatelessWidget {
                 Icons.more_vert,
                 color: Theme.of(context).primaryIconTheme.color,
               ),
-              items: [
+              items: const [
                 DropdownMenuItem(
                   value: 'logout',
                   child: Row(
-                    children: const [
+                    children: [
                       Icon(
                         Icons.exit_to_app,
                         color: Colors.black87,
@@ -52,11 +49,11 @@ class ChatPage extends StatelessWidget {
                 onPressed: () => {
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (ctx) {
-                      return NotificationPage();
+                      return const NotificationPage();
                     }),
                   )
                 },
-                icon: Icon(Icons.notifications),
+                icon: const Icon(Icons.notifications),
               ),
               Positioned(
                 top: 5,
@@ -66,7 +63,7 @@ class ChatPage extends StatelessWidget {
                   backgroundColor: Colors.red.shade800,
                   child: Text(
                     '${Provider.of<ChatNotificationService>(context).itemsCount}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 12,
                     ),
                   ),
@@ -84,18 +81,18 @@ class ChatPage extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Provider.of<ChatNotificationService>(
-            context,
-            listen: false,
-          ).add(ChatNotification(
-            title: 'teste de notificacao',
-            body: Random().nextDouble().toString(),
-          ));
-        },
-        child: const Icon(Icons.add),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Provider.of<ChatNotificationService>(
+      //       context,
+      //       listen: false,
+      //     ).add(ChatNotification(
+      //       title: 'teste de notificacao',
+      //       body: Random().nextDouble().toString(),
+      //     ));
+      //   },
+      //   child: const Icon(Icons.add),
+      // ),
     );
   }
 }
