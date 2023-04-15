@@ -1,4 +1,4 @@
-package com.example.native_sources
+package com.example.nativo
 
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
@@ -12,7 +12,7 @@ class MainActivity: FlutterActivity() {
         super.configureFlutterEngine(flutterEngine)
 
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
-                call, result ->
+            call, result ->
 
             if(call.method == "calcSum") {
                 val a = call.argument<Int>("a")?.toInt() ?: 0
